@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      <ion-title>History</ion-title>
+    </ion-navbar>
+    <div  style="background: #222;">
+        <ion-segment [(ngModel)]="ordersegment" >
+          <ion-segment-button value="current" class="segment-class" (click)="segmentChange('current')">
+            Current Orders
+          </ion-segment-button>
+          <ion-segment-button value="complete" class="segment-class"(click)="segmentChange('complete')">
+            Complete Orders
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    <!-- <ion-searchbar style="background: #222" (ionInput)="getItems($event)"></ion-searchbar> -->
+  </ion-header>
+  
+  <ion-content no-lines no-padding>
+      <div class="item-main-div" *ngFor="let item of showableData; let i=index;">
+        <ion-item no-lines no-padding class="custom-item">
+            <img item-start class="item-img" src="../../assets/imgs/profile.jpg">
+            <div>
+              <div class="div-one">
+                  <div class="div-one-first">Item Title -1</div>
+                  <h6 class="div-one-second">Details</h6>
+              </div>
+              <div class="div-two">
+                    <!-- <div class="div-two-first"><span><strong>Price-</strong> 90/-</span> </div> -->
+                    <div class="div-two-second" (click)="trackOrder()"> Track Order</div>
+                    <div><ion-badge class="{{item?.status == 'Cancel' || item?.status == 'Complete' ? 'badge-complete' : 'badge-other'}}">
+                      {{item.status}}
+                      </ion-badge></div>
+  
+              </div>
+  
+            </div>
+        </ion-item>
+      </div>
+  
+  
+  
+  </ion-content>
+  
