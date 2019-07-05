@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ItemDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +8,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'item-details.html',
 })
 export class ItemDetailsPage {
-  allItems=[1,1,1,1,1,1,1,1,1,1,1]
+  public ordersegment:any = "current";
+  public showableData:any;
+
+  allItems={
+    current:[
+      {status:"Pending"},{status:"Approved"},{status:"Pending"},
+      {status:"Approved"},{status:"Pending"}
+    ],
+    complete:[
+      {status:"Cancel"},{status:"Complete"},
+      {status:"Cancel"},{status:"Cancel"},
+      {status:"Complete"},{status:"Cancel"},
+      {status:"Complete"},{status:"Complete"}
+    ]
+    
+    }
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.showableData = this.allItems.current;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ItemDetailsPage');
   }
 
+  segmentChange(value){
+    let vv = value;
+    this.showableData = this.allItems[vv]
+  }
+  
+
+  trackOrder(){
+    this.navCtrl.push("TrackOrderPage")
+  }
+
 }
+
