@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,7 +11,7 @@ export class HomePage {
   femaleClass:boolean = false;
   alldata:any;
   showDetails:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public modalCtrl:ModalController) {
     this.alldata={
       male:[
         {name:'HAIR'},{name:'SKIN'},{name:'COLOUR'},{name:'FACIAL'},
@@ -40,7 +40,10 @@ export class HomePage {
 
   goToItemDetails(){
     this.navCtrl.push("ItemDetailsPage");
+    // let profileModal =this.modalCtrl.create("SlotBookingPage")
+    // profileModal.present();
   }
+  
 
   
 
