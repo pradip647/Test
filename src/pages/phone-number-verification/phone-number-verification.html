@@ -7,9 +7,30 @@
       </div>
       <div class="sub-three">Enter the verification code we just sent you on your mobile</div>
       <div class="sub-five">
-        <ion-item no-lines no-padding class="item-class">
+        <!-- <ion-item no-lines no-padding class="item-class">
             <ion-input class="input-class" type="tel" placeholder="Verification code" maxLength="10"></ion-input>
-        </ion-item>
+        </ion-item> -->
+        <form >
+          <div class=input-fields>
+            <ion-item class="inputfields" style="margin-left: 0 !important;">
+              <ion-input class="inputsitem" type="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp.input1" placeholder="" maxlength="1" #a (keyup)="moveFocus(b, $event, a)"></ion-input>
+            </ion-item>
+            <ion-item class="inputfields">
+              <ion-input class="inputsitem" type="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp.input2" placeholder="" maxlength="1" #b (keyup)="moveFocus(c, $event, a)"></ion-input>
+            </ion-item>
+            <ion-item class="inputfields">
+              <ion-input class="inputsitem" type="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp.input3" placeholder="" maxlength="1" #c (keyup)="moveFocus(d, $event, b)"></ion-input>
+            </ion-item>
+            <ion-item class="inputfields">
+              <ion-input class="inputsitem" type="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp.input4" placeholder="" maxlength="1" #d (keyup)="moveFocus(e, $event, c)"></ion-input>
+            </ion-item>
+            <ion-item class="inputfields" style="margin-right: 0 !important;">
+              <ion-input class="inputsitem" type="tel" [ngModelOptions]="{standalone: true}" [(ngModel)]="otp.input5" placeholder="" maxlength="1" #e (keyup)="moveFocus(e, $event, d)"></ion-input>
+            </ion-item>
+          </div>
+        </form>
+
+
       </div>
       <div *ngIf="value != 0" class="sub-four">
           <span class="sub-span">{{value? value.toString().length >1 ? '00:'+value : '00:0'+value : "00:00"}}</span>
@@ -29,31 +50,34 @@
 
 
 
-<!-- <ion-content no-padding>
-  <div class="content-div">
+  <!--
 
-    <div class="logo-bacground-div">
-      <img class="logo-img" src="../../assets/imgs/loading.gif" style="width: 100%">
-    </div>
-
-    <div class="item-div">
-        <ion-item no-lines class="custom-item">
-          <ion-input class="custom-input" type="text" placeholder="Verification code"></ion-input>
+<ion-content no-padding>
+    <div class="content-div">
+      
+      <div class="sub-one">Verification</div>
+      <div class="sub-two">
+        <img class="sub-logo" src="../../assets/imgs/login.png" >
+      </div>
+      <div class="sub-three">Enter the verification code we just sent you on your mobile</div>
+      <div class="sub-five">
+        <ion-item no-lines no-padding class="item-class">
+            <ion-input class="input-class" type="tel" placeholder="Verification code" maxLength="10"></ion-input>
         </ion-item>
+      </div>
+      <div *ngIf="value != 0" class="sub-four">
+          <span class="sub-span">{{value? value.toString().length >1 ? '00:'+value : '00:0'+value : "00:00"}}</span>
+      </div>
+      <div *ngIf="value == 0" class="sub-four">If you don't receive a code! <span class="sub-span" (click)="resendClick()">Resend</span></div>
+
+      <div class="sub-six">
+        <button class="sub-six-btn" ion-button round (click)="clickContinue()">Verify</button>
+      </div>
+  
+  
     </div>
+  
+  </ion-content>
 
-    <div class="custom-text-div">
-      Please Enter your verification code.
-    </div>
+  -->
 
-    <div class="resend-btn">
-      <span *ngIf="value == 0 " class="resend-span" (click)="resendButtonClick()">RESEND</span>
-      <span *ngIf="value != 0 " class="count-down">{{value? value.toString().length >1 ? '00:'+value : '00:0'+value : "00:00"}}</span>
-    </div>
-
-  </div>
-
-</ion-content>
-<ion-footer class="custom-footer" no-border>
-    <button class="footer-button" ion-button block (click)="clickContinue()">Continue</button>
-</ion-footer> -->

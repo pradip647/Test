@@ -10,8 +10,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // rootPage: any = "ItemDetailsPage";
-  // rootPage:any = "PhoneNumberAddPage";
-  rootPage:any = "HomePage"
+  rootPage:any = "PhoneNumberAddPage";
+  // rootPage:any = "HomePage"
 
   pages: Array<{title: string, component: any}>;
 

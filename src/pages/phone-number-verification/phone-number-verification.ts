@@ -9,13 +9,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PhoneNumberVerificationPage {
   value:number=30;
-
+  otp:any = {
+    input1:"", input2:"", input3:"", input4:"", input5:""
+  };
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams
   ) {
   }
-
+  moveFocus(next:any, event:any, prev:any){
+    if(event.key == 'Backspace'){
+      prev.setFocus();
+    }else{
+      next.setFocus();
+    }
+  }
   ionViewDidEnter() {
       setInterval(() => {
         if(this.value >0){
@@ -32,7 +40,8 @@ export class PhoneNumberVerificationPage {
   }
 
   clickContinue(){
-    this.navCtrl.push("AddPersonalDetailsPage");
+    // this.navCtrl.push("AddPersonalDetailsPage");
+    this.navCtrl.setRoot("HomePage");
   }
 
 

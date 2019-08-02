@@ -1,73 +1,4 @@
 page-phone-number-verification {
-    /*.content-div{
-        background: color($colors,backgroundOne);height: 100%;width: 100%
-    }
-    .logo-bacground-div{
-        height: 60vw;width: 100%;background: color($colors,backgroundTwo);
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    .logo-img{
-        height: 60vw;
-        width: 60vw !important;
-    }
-    .item-div{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 20px 0;
-    }
-    .custom-item{
-        padding-left: 0px !important;
-        width: 90vw;
-        align-self: center;
-        height: 14vw;
-        padding: 3px 0;
-        border: 1px solid color($colors,dark);
-        border-radius: 7vw;
-        box-shadow: 0px 0px 4px 1px;
-    }
-    .custom-input{
-        padding:0 5px 0 9px
-    }
-
-    .custom-text-div{
-        padding: 0px 5vw;
-        text-align: center;
-        font-size: 11px;
-        font-weight: bold;
-        letter-spacing: 1.2px;
-        line-height: 1.5;
-    }
-    .resend-btn{
-        text-align: center;
-        font-size: 14px;
-        font-weight: bold;
-        letter-spacing: 1.4px;
-        padding: 4vw 0;  
-    }
-    .resend-span{
-        background: color($colors,backgroundTwo);
-        padding: 4px 15px 2px 15px;
-        border-radius: 13px;
-        border:1px solid color($colors,dark);
-        box-shadow: 0px 0px 4px 1px;
-    }
-    .count-down{
-        color: color($colors,danger);
-    }
-
-    .custom-footer{
-        height: 14vw;
-    }
-    .footer-button{
-        height: 100%;
-        background: color($colors,dark);
-        letter-spacing: 1.2px;
-    }
-    */
-
     .content-div{display:flex;width:100%;flex-direction:column;text-align: center;margin: 10vw 0;}
     .sub-one{
         font-size: 18px; font-weight: bold;padding: 0 10vw; letter-spacing: 1.2px;
@@ -81,13 +12,40 @@ page-phone-number-verification {
         font-size: 12px;
         font-weight: 400;
     }
-    .sub-five{font-size: 12px; font-weight: 500; letter-spacing: 1.2px;padding: 4vw 10vw;}
+    .sub-five{font-size: 12px; font-weight: 500; letter-spacing: 1.2px;padding: 4vw 10vw;
+        // form design for opt Screen design START ==>
+        .input-fields{
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            .inputfields{
+                width: 100%;
+                margin: 5px;
+                background: transparent;
+                border-bottom: 2px solid color($colors, danger);
+                border-radius: 0;
+                color: color($colors, danger);
+                .item-inner {
+                    padding-right: 0;
+                    .text-input{
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        // text-align: center;
+                        // font-size: 25px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        // form design for opt Screen design END ==>
+    }
+
     .item-class{
         border: .5px solid color($colors,danger) !important; border-left: 0!important;border-right: 0!important;border-top: 0!important;
         .item-inner{
             padding-right: 0 !important;
             font-size: 16px !important;
-            //color: color($colors, danger) !important;
         }
         ::placeholder {
             font-size: 13px; //sets placeholder font size
